@@ -1,0 +1,27 @@
+{
+  "name": "react-hello-world",
+  "version": "1.0.0",
+  "description": "React Hello World",
+  "main": "index.js",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "author": "CodeMix",
+  "license": "ISC",
+  "dependencies": {
+    "@material-ui/core": "^1.4.0",
+    "@material-ui/icons": "^1.1.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-pdf": "^3.0.5",
+    "react-redux": "^5.0.7",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "^1.1.1",
+    "react-transition-group": "^2.4.0",
+    "redux": "^4.0.0",
+    "redux-devtools": "^3.4.1"
+  }
+}
