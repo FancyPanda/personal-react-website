@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {
   withStyles
-}
-from '@material-ui/core/styles';
+}from '@material-ui/core/styles';
+import {Link} from 'react-router-dom'
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
@@ -48,7 +48,7 @@ function experienceCard(props) {
     < CardContent >
     < Typography gutterBottom variant = "headline"
     component = "h2" className={classes.title} >{experienceTitle}< /Typography> < Typography component = "p" >{experienceText}
-    < /Typography> < /CardContent >
+    < /Typography> < /CardContent ><CardActions><Link style={{margin:"auto"}}to="/resume"><Button variant="contained" color="secondary">View Resume</Button></Link></CardActions>
     < /Card>
       < /div >
   );

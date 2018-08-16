@@ -30,7 +30,7 @@ const styles = {
     backgroundColor: 'white',
   },
   gridList: {
-    width:"100%",
+    width:"100%"
 
   },
   icon: {
@@ -75,14 +75,14 @@ function PictureGalleryPage(props) {
     } >
     < CardContent >
     < Typography gutterBottom variant = "headline"
-    component = "h2" className={classes.title} >Picture Gallery</Typography>
+    component = "h2" className={classes.title} >Photo Gallery</Typography>
     <GridList cellHeight={180} className={classes.gridList}>
         <GridListTile key="Subheader" cols={2} style={{ height: 'auto',width:'100%', }}>
           <ListSubheader component="div">December</ListSubheader>
         </GridListTile>
         {tileData.map(tile => (
           <GridListTile key={tile.img}>
-            <img src={tile.img} alt={tile.title} />
+            <img src={require('../media/'+tile.img)} alt={tile.title} />
             <GridListTileBar
               title={tile.title}
               subtitle={<span>by: {tile.author}</span>}

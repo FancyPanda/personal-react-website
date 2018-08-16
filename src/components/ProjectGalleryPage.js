@@ -45,6 +45,7 @@ width:"100%",
     textAlign:"center",
     },
     button:{},
+    tile:{},
 };
 const tileData = [{
     img: "profilepic.JPG",
@@ -78,7 +79,7 @@ function ProjectGalleryPage(props) {
     <GridList cellHeight={'auto'} className={classes.gridList}>
 
         {tileData.map(tile => (
-          <GridListTile key={tile.img}>
+          <GridListTile className={classes.tile}key={tile.img}>
             <img src={require('../media/'+tile.img)} alt={tile.title} />
             <GridListTileBar
               title={tile.title}
@@ -94,7 +95,7 @@ function ProjectGalleryPage(props) {
       </GridList>
      < /CardContent >
      <CardActions>
-     <Link to="/">
+     <Link style={{margin:"auto"}}to="/">
      <Button variant="contained" color="primary" className={classes.button}>Back</Button>
      </Link>
      </CardActions>

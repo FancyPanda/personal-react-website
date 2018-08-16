@@ -10,6 +10,7 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import {Link} from 'react-router-dom'
 import {projectsTitle,projectsText} from '../../../constants/text';
 const styles = {
   card: {
@@ -48,7 +49,7 @@ function projectsCard(props) {
     < CardContent >
     < Typography gutterBottom variant = "headline"
     component = "h2" className={classes.title} >{projectsTitle}< /Typography> < Typography component = "p" >{projectsText}
-    < /Typography> < /CardContent >
+    < /Typography> < /CardContent ><CardActions><Link style={{margin:"auto"}}to="/projects"><Button variant="contained"color="secondary">Project Gallery</Button></Link></CardActions>
     < /Card>
       < /div >
   );

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {withStyles} from '@material-ui/core/styles';
-import { Document } from 'react-pdf'
+import { Document, Page } from 'react-pdf'
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
@@ -19,7 +19,7 @@ import {Link} from 'react-router-dom'
 const styles = {
   card: {
     width: "100%",
-    height: 450,
+    height: "100%",
     borderRadius: 10,
     margin:"auto",
   //  marginLeft: 15,
@@ -40,7 +40,8 @@ const styles = {
     color:"white",
     textAlign:"center",
     },
-    button:{},
+    button:{padding:10,
+            },
 };
 
 function ResumePage(props) {
@@ -55,11 +56,13 @@ function ResumePage(props) {
     < Typography gutterBottom variant = "headline"
     component = "h2" className={classes.title} >{educationTitle}< /Typography> < Typography component = "p" >{educationText}
     < /Typography>
-      <Document file={require('../media/resume.pdf')}/>
+      <Document file={require('../media/resume.pdf')}>
+      <Page style={{width:"100%",margin:"auto",textAlign:"center"}}pageNumber = {1}/>
+      </Document>
      < /CardContent >
-     <CardActions>
-     <Link to="/">
-     <Button variant="contained" color="primary" className={classes.button}>Back</Button>
+     <CardActions >
+     <Link style ={{margin:"auto"}}to="/">
+     <Button variant="contained" color="secondary" className={classes.button}>Back</Button>
      </Link>
      </CardActions>
     < /Card>

@@ -4,6 +4,7 @@ import {
   withStyles
 }
 from '@material-ui/core/styles';
+import {Link} from 'react-router-dom'
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
@@ -48,7 +49,7 @@ function hobbiesCard(props) {
     < CardContent >
     < Typography gutterBottom variant = "headline"
     component = "h2" className={classes.title} >{hobbiesTitle}< /Typography> < Typography component = "p" >{hobbiesText}
-    < /Typography> < /CardContent >
+    < /Typography> < /CardContent ><CardActions><Link style={{margin:"auto"}}to="/photos"><Button variant="contained"color="secondary">Photo Gallery</Button></Link></CardActions>
     < /Card>
       < /div >
   );

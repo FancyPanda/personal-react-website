@@ -21,6 +21,7 @@ const styles = {
     height: 450,
     borderRadius: 10,
     margin:"auto",
+    overflowY:"scroll"
   //  marginLeft: 15,
   },
   root:{
