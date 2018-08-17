@@ -13,9 +13,9 @@ import Typography from '@material-ui/core/Typography';
 
 const styles = {
   card: {
-    width: 450,
+    width: 350,
     borderRadius: "100%",
-    height: 450,
+    height: 350,
     margin: "0 auto",
     //marginRight: 15,
     },
@@ -35,7 +35,7 @@ function CircleCard(props) {
   return ( < div style ={{textAlign:"center"}}>
     < Card className = {
       classes.card
-    }style={props.displayImage==true?{backgroundImage: "url(" + props.image + ")",backgroundSize: "450px 500px"}:{}}>
+    }style={props.displayImage==true?{backgroundImage: "url(" + props.image + ")",backgroundSize: "350px 400px"}:{}}>
     {!props.displayImage&&< CardContent className={classes.content}>
     < Typography className={classes.title}gutterBottom variant = "headline"
     component = "h2" >{props.title}< /Typography> < Typography component = "p" >{props.text}

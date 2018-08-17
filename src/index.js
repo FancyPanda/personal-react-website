@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/App';
+import 'typeface-karla';
 import {
   MuiThemeProvider, createMuiTheme
 }
@@ -17,6 +18,12 @@ const theme = createMuiTheme({
 
       contrastText: '#fff',
     },
+  },
+  typography: {
+    // Use the system font instead of the default Roboto font.
+    fontFamily: [
+      '"Karla"',
+    ].join(','),
   },
 });
 

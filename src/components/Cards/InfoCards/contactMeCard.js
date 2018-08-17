@@ -20,9 +20,9 @@ import DraftsIcon from '@material-ui/icons/Drafts';
 import {contactMeTitle,contactMeText} from '../../../constants/text';
 const styles = {
   card: {
-    width: 450,
-    height: 450,
-    borderRadius: 10,
+    width: "100%",
+    minHeight: 450,
+    //borderRadius: 10,
     margin:"auto",
   //  marginLeft: 15,
   },
@@ -36,7 +36,7 @@ const styles = {
   title:{
     width:"100%",
     backgroundColor:"#006494",
-    borderRadius:10,
+  //  borderRadius:10,
     paddingTop:10,
     paddingBottom:10,
     color:"white",
@@ -53,13 +53,15 @@ function contactMeCard(props) {
     classes
   } = props;
   return ( < div >
-    < Card raised={true}  className = {
+    < div  className = {
       classes.card
     }>
     < CardContent >
     < Typography gutterBottom variant = "headline"
     component = "h2" className={classes.title} >{contactMeTitle}< /Typography> < Typography component = "p" >{contactMeText}
-    < /Typography> < /CardContent ><Divider/><CardActions><List style={{width:"100%"}}component="nav">
+    < /Typography>
+      <Divider/>
+    <List style={{width:"100%"}}component="nav">
       <a href="mailto:michael@vanderlyn.info">
         <ListItem button>
           <ListItemIcon>
@@ -84,8 +86,9 @@ function contactMeCard(props) {
           <ListItemText primary="GitHub" />
         </ListItem>
         </a>
-      </List></CardActions>
-    < /Card>
+      </List>
+      < /CardContent >
+    < /div>
       < /div >
   );
 }

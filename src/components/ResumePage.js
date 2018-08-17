@@ -57,7 +57,7 @@ function ResumePage(props) {
     component = "h2" className={classes.title} >{educationTitle}< /Typography> < Typography component = "p" >{educationText}
     < /Typography>
       <Document file={require('../media/resume.pdf')}>
-      <Page style={{width:"100%",margin:"auto",textAlign:"center"}}pageNumber = {1}/>
+      <Page scale={1}style={{width:"100%",margin:"auto",textAlign:"center"}}pageNumber = {1}/>
       </Document>
      < /CardContent >
      <CardActions >

@@ -61,26 +61,33 @@ class ImageCard extends React.Component {
     super(props);
     this.state = {
       type: this.props.type,
-      gray: true,
+      gray: !this.props.selected,
       hover:false,
     }
   }
 
   onHoverOn() {
     console.log("hover on");
+    console.log(this.props.size);
+    if(this.props.selected ==false)
+    {
     this.setState({
-      gray: !this.state.gray,
+      gray: false,
       hover:true,
     //  type: this.state.type === "square" ? "circle" : "square"
     });
   }
+  }
   onHoverOff() {
     console.log("hover off");
+    console.log(this.props.selected);
+    if(this.props.selected==false){
     this.setState({
-      gray: !this.state.gray,
+      gray: true,
       hover:false,
       //type: this.state.type === "square" ? "circle" : "square"
     });
+  }
   }
   render() {
      const { show } = this.state;
@@ -97,7 +104,7 @@ class ImageCard extends React.Component {
       }
       className = {
 
-        this.state.hover ?
+        this.state.hover || this.props.selected==true ?
           classes.hoverCircle : classes.noHoverCircle
 
       }
@@ -106,10 +113,12 @@ class ImageCard extends React.Component {
           backgroundImage: "url(" + require(
             "../../media/" + this.props.fileName) + ")",
             filter: "grayscale(100%)",
+            backgroundSize:""+this.props.size,
         } : {
           backgroundImage: "url(" + require(
             "../../media/" + this.props.fileName) + ")",
           filter: "grayscale(0%)",
+          backgroundSize:this.props.width+"px "+this.props.height+"px",
         }
       } >
       < h1 className = {

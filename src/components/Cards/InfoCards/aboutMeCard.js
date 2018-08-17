@@ -13,9 +13,8 @@ import Typography from '@material-ui/core/Typography';
 import {aboutMeTitle,aboutMeText} from '../../../constants/text';
 const styles = {
   card: {
-    width: 450,
-    height: 450,
-    borderRadius: 10,
+    width: "100%",
+    minHeight: 450,
     margin:"auto",
   //  marginLeft: 15,
   },
@@ -29,7 +28,7 @@ const styles = {
   title:{
     width:"100%",
     backgroundColor:"#006494",
-    borderRadius:10,
+    //borderRadius:10,
     paddingTop:10,
     paddingBottom:10,
     color:"white",
@@ -42,14 +41,14 @@ function aboutMeCard(props) {
     classes
   } = props;
   return ( < div >
-    < Card raised={true}  className = {
+    < div raised={false}  className = {
       classes.card
     } >
     < CardContent >
     < Typography gutterBottom variant = "headline"
     component = "h2" className={classes.title} >{aboutMeTitle}< /Typography> < Typography component = "p" >{aboutMeText}
     < /Typography> < /CardContent >
-    < /Card>
+    < /div>
       < /div >
   );
 }

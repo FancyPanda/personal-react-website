@@ -19,9 +19,10 @@ function InfoBar(props) {
     console.log(obj)
     props.onClick(obj);
   }
+  console.log(props.selected);
   console.log("info"+props.info);
   return (
-    < Grid container style = {{textAlign:"center"}}spacing = {
+    < Grid container style = {{textAlign:"center",paddingTop:16,height:"100vh"}}spacing = {
       16
     } >
     {props.info.map(obj=>(
@@ -35,12 +36,12 @@ function InfoBar(props) {
        props.colWidth
      } >
      <button style = {{backgroundColor: "Transparent",backgroundRepeat:"no-repeat",border: "none",cursor:"pointer",overflow: "hidden",outline:"none",}}onClick = {handleClick.bind(this,obj)}>
-     < ImageCard gray = {
+     < ImageCard selected = {props.selected==obj.text?true:false}gray = {
        false
      }
     type = "circle"
     fileName = {obj.image}
-    size = "175px 200px"
+    size = {obj.size}
     text = {obj.text} / ></button>
        < /Grid>))}
   < /Grid >

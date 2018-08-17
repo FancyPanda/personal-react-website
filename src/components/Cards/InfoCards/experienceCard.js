@@ -11,11 +11,12 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import {experienceTitle,experienceText} from '../../../constants/text';
+import {Document, Page} from 'react-pdf';
 const styles = {
   card: {
-    width: 450,
-    height: 450,
-    borderRadius: 10,
+    width: "100%",
+    minHeight: 450,
+  //  borderRadius: 10,
     margin:"auto",
   //  marginLeft: 15,
   },
@@ -29,7 +30,7 @@ const styles = {
   title:{
     width:"100%",
     backgroundColor:"#006494",
-    borderRadius:10,
+  //  borderRadius:10,
     paddingTop:10,
     paddingBottom:10,
     color:"white",
@@ -42,14 +43,18 @@ function experienceCard(props) {
     classes
   } = props;
   return ( < div >
-    < Card raised={true}  className = {
+    < div   className = {
       classes.card
     } >
     < CardContent >
     < Typography gutterBottom variant = "headline"
     component = "h2" className={classes.title} >{experienceTitle}< /Typography> < Typography component = "p" >{experienceText}
-    < /Typography> < /CardContent ><CardActions><Link style={{margin:"auto"}}to="/resume"><Button variant="contained" color="secondary">View Resume</Button></Link></CardActions>
-    < /Card>
+    < /Typography>
+    <Document file={require('../../../media/resume.pdf')}>
+    <Page scale={1}style={{width:"100%"}}pageNumber = {1}/>
+    </Document>
+     < /CardContent >
+    < /div>
       < /div >
   );
 }

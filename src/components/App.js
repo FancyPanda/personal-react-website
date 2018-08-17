@@ -14,7 +14,7 @@ class App extends React.Component
 {
 render()
 {
-    return (<div><NavBar/><Router><div>
+    return (<div><Router><div>
             <Route exact path="/" component={LandingPage}/>
             <Route path="/resume" component={ResumePage}/>
             <Route path="/projects" component={ProjectGalleryPage}/>

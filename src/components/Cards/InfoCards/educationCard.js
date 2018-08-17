@@ -17,11 +17,11 @@ import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 const styles = {
   card: {
-    width: 450,
-    height: 450,
-    borderRadius: 10,
+    width: "100%",
+    minHeight: 450,
+  //  borderRadius: 10,
     margin:"auto",
-    overflowY:"scroll"
+  //  overflowY:"scroll"
   //  marginLeft: 15,
   },
   root:{
@@ -34,7 +34,7 @@ const styles = {
   title:{
     width:"100%",
     backgroundColor:"#006494",
-    borderRadius:10,
+    // /borderRadius:10,
     paddingTop:10,
     paddingBottom:10,
     color:"white",
@@ -47,7 +47,7 @@ function educationCard(props) {
     classes
   } = props;
   return ( < div >
-    < Card raised={true}  className = {
+    < div  className = {
       classes.card
     } >
     < CardContent >
@@ -78,7 +78,7 @@ function educationCard(props) {
         </ExpansionPanelDetails>
       </ExpansionPanel>
      < /CardContent >
-    < /Card>
+    < /div>
       < /div >
   );
 }

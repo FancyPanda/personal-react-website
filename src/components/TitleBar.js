@@ -11,15 +11,18 @@ import ArrowIcon from '@material-ui/icons/ArrowDropDown';
 const styles = {
   topBar: {
     width: "100%",
-    height: "50vh",
+    height: "100vh",
     position: "relative",
-    textAlign: "center"
+    textAlign: "center",
+    overflow:"hidden",
   },
   topImage: {
     width: "100%",
-    maxHeight: "100%",
+    height: "100vh",
+
     objectFit: "cover",
-    filter: "grayscale(100%) blur(1px)",
+    filter:"brightness(70%)",
+    //filter: "grayscale(100%) blur(1px)",
     //transform: "translate(7%,0)",
   },
   dimmedCentered: {
@@ -34,6 +37,26 @@ const styles = {
     fontSize: "40px",
     paddingTop: 20,
     paddingBottom:20
+  },
+  centered:{
+    position: "absolute",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
+    color: "white",
+    height:"auto",
+    textAlign: "center",
+    fontSize: "40px",
+    //paddingTop: 35,
+    //paddingBottom:35,
+    padding:40,
+    //background: 'rgba(76, 70, 50, 0.5)'
+  },
+  subtitle:{
+    color:"white",
+  },
+  title:{
+    color:"white",
   },
   bottomCentered: {
     position: "absolute",
@@ -52,20 +75,22 @@ class TitleBar extends React.Component {
         } >
         < img alt = "beach"
         src = {
-          require('../media/beach-beautiful-bridge-449627.jpg')
+          require('../media/welcome.JPG')
         }
         className = {
           classes.topImage
         }
-        /> < Typography variant = "title"
+        />
+        <div className={classes.centered}>
+         <Typography variant = "title" className={classes.subtitle}>
+         Welcome, I'm
+         </Typography>
+        < Typography variant = "display3"
         color = "inherit"
         className = {
-          classes.dimmedCentered
+          classes.title
         } >
-        Michael.Vanderlyn. < /Typography> < div className = {
-          classes.bottomCentered
-        } >
-        < /div> < /div>);
+        Michael Vanderlyn < /Typography> </div> < /div>);
       }
     }
     export default withStyles(styles)(TitleBar);

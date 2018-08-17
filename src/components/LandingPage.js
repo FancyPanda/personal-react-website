@@ -18,28 +18,29 @@ class LandingPage extends React.Component {
     this.state = {
       curImageName: "profilepic2.JPG",
       displayImageCircle: true,
-      card: aboutMeCard
+      card: aboutMeCard,
+      selected:"About Me"
     }
   }
   onClick(info){
     switch(info.text){
       case "Education":
-        this.setState({curImageName:info.image,title:educationTitle,text:educationText,card:educationCard});
+        this.setState({curImageName:info.image,title:educationTitle,text:educationText,card:educationCard,selected:info.text});
         break;
       case "Experience":
-        this.setState({curImageName:info.image,title:experienceTitle,text:experienceText,card:experienceCard});
+        this.setState({curImageName:info.image,title:experienceTitle,text:experienceText,card:experienceCard,selected:info.text});
         break;
       case "Contact Me!":
-        this.setState({curImageName:info.image,title:contactMeTitle,text:contactMeText,card:contactMeCard});
+        this.setState({curImageName:info.image,title:contactMeTitle,text:contactMeText,card:contactMeCard,selected:info.text});
         break;
       case "About Me":
-       this.setState({curImageName:info.image,title:aboutMeTitle,text:aboutMeText,card:aboutMeCard});
+       this.setState({curImageName:info.image,title:aboutMeTitle,text:aboutMeText,card:aboutMeCard,selected:info.text});
        break;
       case "Hobbies":
-        this.setState({curImageName:info.image,title:hobbiesTitle,text:hobbiesText,card:hobbiesCard});
+        this.setState({curImageName:info.image,title:hobbiesTitle,text:hobbiesText,card:hobbiesCard,selected:info.text});
         break;
       case "Projects":
-        this.setState({curImageName:info.image,title:projectsTitle,text:projectsText,card:projectsCard});
+        this.setState({curImageName:info.image,title:projectsTitle,text:projectsText,card:projectsCard,selected:info.text});
         break;
       default:
       break;
@@ -50,32 +51,25 @@ class LandingPage extends React.Component {
   render() {
 
     return ( < Grid container spacing = {
-        16
+        0
       } styles={{backgroundColor:"#e8f1f2"}}>
-      < Grid item xs = {
-        12
-      }
-      sm = {
-        12
-      }
-      md = {
-        12
-      } >
-      < TitleBar / >
-      < /Grid>
-      <Hidden mdDown>
+      <Grid item lg={12}><TitleBar/></Grid>
+      <Grid item container style={{height:"100vh"}} lg={12}>
+      <Grid item lg={1}/>
       < Grid item lg={2}>
-      < InfoBar colWidth={12}info={leftBarInfo} onClick={this.onClick.bind(this)}/ >
-      < /Grid></Hidden>
-       < Grid item style = {{margin:"auto 0"}}xs = {
+      < InfoBar selected={this.state.selected}colWidth={12}info={leftBarInfo} onClick={this.onClick.bind(this)}/ >
+      < /Grid>
+      <Grid item xs={6}sm={6}md={6}>
+      <Grid container>
+       < Grid item style = {{display:"none",margin:"auto 0"}}xs = {
       12
     }
     sm = {
       12
     }
     md = {
-        6
-      }lg={4}xl={4} >
+        12
+      }lg={12}xl={12} >
       < CircleCard displayImage= {this.state.displayImageCircle} title={this.state.displayImageCircle!==true?this.state.title:""}text={this.state.displayImageCircle===false?this.state.text:""} image={this.state.displayImageCircle===false?null:require("../media/"+this.state.curImageName)}/ >
       < /Grid> < Grid item xs = {
     12
@@ -84,23 +78,19 @@ class LandingPage extends React.Component {
     12
   }
   md = {
-      6
-    } lg={4}xl={4} style={{margin:"auto 0"}}>
+      12
+    } lg={12}xl={12} style={{margin:"auto 0"}}>
     {<this.state.card/>}< /Grid>
-    <Hidden mdDown>
-    < Grid item lg={2}>
-    < InfoBar colWidth={12}info={rightBarInfo} onClick={this.onClick.bind(this)}/ >
-    < /Grid></Hidden>
-    <Hidden lgUp>
-    <Grid item md={6}sm={12}xs={12} style={{textAlign:"center"}}>
-  < InfoBar colWidth={4}info={leftBarInfo} onClick={this.onClick.bind(this)}/ >
-</Grid>
-<Grid item md={6}sm={12}xs={12} style={{textAlign:"center"}}>
-    < InfoBar colWidth={4}info={rightBarInfo} onClick={this.onClick.bind(this)}/ >
     </Grid>
-    </Hidden>
+    </Grid>
+    < Grid item lg={2}>
+    < InfoBar selected={this.state.selected}colWidth={12}info={rightBarInfo} onClick={this.onClick.bind(this)}/ >
+    < /Grid>
+    <Grid item lg={1}/>
     < /Grid >
+    </Grid>
    );
 }
 }
+
 export default LandingPage;

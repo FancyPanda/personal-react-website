@@ -1,4 +1,4 @@
-var aboutMeText = "I am a passionate software and web developer.I seek to constantly learn new things, and solve interesting problems.I have over 6 years of experience programming .Outside of my professional life I enjoy DJing, finding new music, working out, travelling / going on adventures.Check out the sections below to learn more!";
+var aboutMeText = "I am a passionate software and web developer.I seek to constantly learn new things, and solve interesting problems.I have over 6 years of experience programming .Outside of my professional life I enjoy DJing, finding new music, working out, travelling / going on adventures. Click on the circles below to learn more!";
 var aboutMeTitle = "About Me";
 var educationText = "";
 var educationTitle = "Educaton";
@@ -6,10 +6,10 @@ var experienceText = "Throughout my college experience I have had the opportunit
 var experienceTitle = "Experience";
 var contactMeText = "Feel free to conect with me or reach out to me if you want to work on something together. Below are all the platforms I'm on:";
 var contactMeTitle = "Contact Me!";
-var hobbiesText = "I enjoy coding, traveling (view travel gallery) working out, cooking, and DJing";
+var hobbiesText = "I enjoy coding, traveling working out, cooking, and DJing. Checkout my photo gallery below:";
 var hobbiesTitle = "Hobbies";
 var projectsText= "In my spare time I enjoy working on projects I find interesting. Click the link below to go to my projects gallery, or check out my github";
 var projectsTitle = "Projects";
-var leftBarInfo = [{"image":"mason.jpeg","text":"Education"},{"image":"work1.JPG","text":"Experience"},{"image":"profilepic.JPG","text":"Contact Me!"}];
-var rightBarInfo = [{"image":"profilepic2.JPG","text":"About Me"},{"image":"travel1.jpg","text":"Hobbies"},{"image":"work3.JPG","text":"Projects"}];
+var leftBarInfo = [{"image":"mason.jpeg","text":"Education","size":"175px 200px"},{"image":"work1.JPG","text":"Experience","size":"190px 200px"},{"image":"contact.jpg","text":"Contact Me!","size":"250px 200px"}];
+var rightBarInfo = [{"image":"profilepic2.JPG","text":"About Me","size":"175px 200px"},{"image":"dj.jpg","text":"Hobbies","size":"300px 200px"},{"image":"project.jpg","text":"Projects","size":"250px 200px"}];
 export {aboutMeTitle,aboutMeText,leftBarInfo,rightBarInfo,educationText,educationTitle,experienceTitle,experienceText,contactMeTitle,contactMeText,hobbiesTitle,hobbiesText,projectsTitle,projectsText};

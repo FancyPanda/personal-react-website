@@ -14,9 +14,9 @@ import {Link} from 'react-router-dom'
 import {projectsTitle,projectsText} from '../../../constants/text';
 const styles = {
   card: {
-    width: 450,
-    height: 450,
-    borderRadius: 10,
+    width: "100%",
+    minHeight: 450,
+  //  borderRadius: 10,
     margin:"auto",
   //  marginLeft: 15,
   },
@@ -30,7 +30,7 @@ const styles = {
   title:{
     width:"100%",
     backgroundColor:"#006494",
-    borderRadius:10,
+  //  borderRadius:10,
     paddingTop:10,
     paddingBottom:10,
     color:"white",
@@ -43,14 +43,14 @@ function projectsCard(props) {
     classes
   } = props;
   return ( < div >
-    < Card raised={true}  className = {
+    < div  className = {
       classes.card
     } >
     < CardContent >
     < Typography gutterBottom variant = "headline"
     component = "h2" className={classes.title} >{projectsTitle}< /Typography> < Typography component = "p" >{projectsText}
     < /Typography> < /CardContent ><CardActions><Link style={{margin:"auto"}}to="/projects"><Button variant="contained"color="secondary">Project Gallery</Button></Link></CardActions>
-    < /Card>
+    < /div>
       < /div >
   );
 }
