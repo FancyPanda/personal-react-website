@@ -12,6 +12,9 @@ import experienceCard from './Cards/InfoCards/experienceCard';
 import aboutMeCard from './Cards/InfoCards/aboutMeCard';
 import hobbiesCard from './Cards/InfoCards/hobbiesCard';
 import projectsCard from './Cards/InfoCards/projectsCard';
+import Paper from '@material-ui/core/Paper';
+import Tabs from '@material-ui/core/Tabs';
+import Tab from '@material-ui/core/Tab';
 class LandingPage extends React.Component {
   constructor(props){
     super(props);
@@ -52,26 +55,32 @@ class LandingPage extends React.Component {
 
     return ( < Grid container spacing = {
         0
-      } styles={{backgroundColor:"#e8f1f2"}}>
+      } >
       <Grid item lg={12}><TitleBar/></Grid>
-      <Grid item container style={{height:"100vh"}} lg={12}>
+      <Grid item container style={{height:"100vh",backgroundColor:"#eae0c8"}} lg={12}>
+      <Grid item lg={12}>
+
+        <Tabs style={{backgroundColor:"#7ec0ee"}}
+          value={this.state.value}
+          onChange={this.handleChange}
+          indicatorColor="primary"
+          textColor="primary"
+          centered
+        >
+          <Tab style={{color:"white"}} label="About Me" />
+          <Tab style={{color:"white"}} label="Education" />
+          <Tab style={{color:"white"}} label="Projects" />
+          <Tab style={{color:"white"}} label="Resume" />
+        </Tabs>
+
+      </Grid>
       <Grid item lg={1}/>
       < Grid item lg={2}>
-      < InfoBar selected={this.state.selected}colWidth={12}info={leftBarInfo} onClick={this.onClick.bind(this)}/ >
       < /Grid>
       <Grid item xs={6}sm={6}md={6}>
       <Grid container>
-       < Grid item style = {{display:"none",margin:"auto 0"}}xs = {
-      12
-    }
-    sm = {
-      12
-    }
-    md = {
-        12
-      }lg={12}xl={12} >
-      < CircleCard displayImage= {this.state.displayImageCircle} title={this.state.displayImageCircle!==true?this.state.title:""}text={this.state.displayImageCircle===false?this.state.text:""} image={this.state.displayImageCircle===false?null:require("../media/"+this.state.curImageName)}/ >
-      < /Grid> < Grid item xs = {
+
+      < Grid item xs = {
     12
   }
   sm = {
@@ -84,8 +93,7 @@ class LandingPage extends React.Component {
     </Grid>
     </Grid>
     < Grid item lg={2}>
-    < InfoBar selected={this.state.selected}colWidth={12}info={rightBarInfo} onClick={this.onClick.bind(this)}/ >
-    < /Grid>
+      < /Grid>
     <Grid item lg={1}/>
     < /Grid >
     </Grid>

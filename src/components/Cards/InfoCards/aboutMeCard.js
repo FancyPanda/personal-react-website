@@ -27,13 +27,24 @@ const styles = {
   },
   title:{
     width:"100%",
-    backgroundColor:"#006494",
+    //backgroundColor:"#7ec0ee",
     //borderRadius:10,
     paddingTop:10,
     paddingBottom:10,
-    color:"white",
+    color:"#57371e",
     textAlign:"center",
+    fontSize: 30,
     },
+    text:{
+      fontSize:20,
+      color:"#57371e",
+    },
+    line:{
+    border: 0,
+    height: "1px",
+    background: "#57371e",
+
+  }
 };
 
 function aboutMeCard(props) {
@@ -46,7 +57,7 @@ function aboutMeCard(props) {
     } >
     < CardContent >
     < Typography gutterBottom variant = "headline"
-    component = "h2" className={classes.title} >{aboutMeTitle}< /Typography> < Typography component = "p" >{aboutMeText}
+    component = "h2" className={classes.title} >{aboutMeTitle}< /Typography> <hr className={classes.line}/>< Typography className={classes.text} >{aboutMeText}
     < /Typography> < /CardContent >
     < /div>
       < /div >

@@ -63,7 +63,13 @@ const styles = {
     bottom: "8px",
     left: "50%",
     transform: "translate(-50%,0)",
-  }
+  },
+  line:{
+  border: 0,
+  height: "1px",
+  background: "#fff",
+  
+}
 }
 class TitleBar extends React.Component {
     render() {
@@ -82,7 +88,7 @@ class TitleBar extends React.Component {
         }
         />
         <div className={classes.centered}>
-         <Typography variant = "title" className={classes.subtitle}>
+         <hr className={classes.line}/><Typography variant = "title" className={classes.subtitle}>
          Welcome, I'm
          </Typography>
         < Typography variant = "display3"
@@ -90,7 +96,7 @@ class TitleBar extends React.Component {
         className = {
           classes.title
         } >
-        Michael Vanderlyn < /Typography> </div> < /div>);
+        Michael Vanderlyn < /Typography><hr className={classes.line}/> </div> < /div>);
       }
     }
     export default withStyles(styles)(TitleBar);

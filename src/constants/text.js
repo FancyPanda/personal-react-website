@@ -1,4 +1,4 @@
-var aboutMeText = "I am a passionate software and web developer.I seek to constantly learn new things, and solve interesting problems.I have over 6 years of experience programming .Outside of my professional life I enjoy DJing, finding new music, working out, travelling / going on adventures. Click on the circles below to learn more!";
+var aboutMeText = "I am a passionate software and web developer. I seek to constantly learn new things, and solve interesting problems. I have over 6 years of experience programming. Outside of my professional life I enjoy DJing, finding new music, working out, travelling / going on adventures. Click on the tabs above to learn more!";
 var aboutMeTitle = "About Me";
 var educationText = "";
 var educationTitle = "Educaton";
