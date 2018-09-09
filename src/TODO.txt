@@ -1,0 +1,9 @@
+1. Move title pic to left more
+2. Make arrow on title pic that moves down to main area
+3. Redo css on all components
+4. Fix contact me section to be in line
+5. Make education a darker brown
+6. Fix resume section
+7. Make it good for mobile
+8. Fix photo Gallery
+9. Fix resume tab to look good
