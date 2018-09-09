@@ -11,6 +11,14 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import {aboutMeTitle,aboutMeText} from '../../../constants/text';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import ListItemText from '@material-ui/core/ListItemText';
+import Divider from '@material-ui/core/Divider';
+import EmailIcon from '@material-ui/icons/Email';
+import DraftsIcon from '@material-ui/icons/Drafts';
+import {contactMeTitle,contactMeText} from '../../../constants/text';
 const styles = {
   card: {
     width: "100%",
@@ -58,7 +66,32 @@ function aboutMeCard(props) {
     < CardContent >
     < Typography gutterBottom variant = "headline"
     component = "h2" className={classes.title} >{aboutMeTitle}< /Typography> <hr className={classes.line}/>< Typography className={classes.text} >{aboutMeText}
-    < /Typography> < /CardContent >
+    < /Typography> <hr className={classes.line}/><List style={{width:"100%"}}component="nav">
+      <a href="mailto:michael@vanderlyn.info">
+        <ListItem button>
+          <ListItemIcon>
+            <EmailIcon />
+          </ListItemIcon>
+          <ListItemText className={classes.avatar}primary="michael@vanderlyn.info" />
+        </ListItem>
+        </a>
+        <a href="https://www.linkedin.com/in/michael-vanderlyn/">
+        <ListItem button>
+          <ListItemIcon>
+            <img className={classes.avatar} src = {require('../../../media/In-2C-34px-R.png')}/>
+          </ListItemIcon>
+          <ListItemText primary="LinkedIn" />
+        </ListItem>
+        </a>
+        <a href="https://github.com/FancyPanda">
+        <ListItem button>
+          <ListItemIcon>
+          <img className={classes.avatar} src = {require('../../../media/GitHub-Mark-32px.png')}/>
+      </ListItemIcon>
+          <ListItemText primary="GitHub" />
+        </ListItem>
+        </a>
+      </List>< /CardContent >
     < /div>
       < /div >
   );

@@ -18,10 +18,7 @@ const styles = {
   card: {
     width: "100%",
     minHeight: 450,
-    maxHeight:"90vh",
-  //  borderRadius: 10,
     margin:"auto",
-    overflowY:"scroll",
   //  marginLeft: 15,
   },
   root:{
@@ -33,13 +30,24 @@ const styles = {
   },
   title:{
     width:"100%",
-    backgroundColor:"#006494",
-  //  borderRadius:10,
+    //backgroundColor:"#7ec0ee",
+    //borderRadius:10,
     paddingTop:10,
     paddingBottom:10,
-    color:"white",
+    color:"#57371e",
     textAlign:"center",
+    fontSize: 30,
     },
+    text:{
+      fontSize:20,
+      color:"#57371e",
+    },
+    line:{
+    border: 0,
+    height: "1px",
+    background: "#57371e",
+
+  }
 };
 
 function hobbiesCard(props) {

@@ -15,6 +15,8 @@ import projectsCard from './Cards/InfoCards/projectsCard';
 import Paper from '@material-ui/core/Paper';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
+import {
+  Link} from 'react-router-dom';
 class LandingPage extends React.Component {
   constructor(props){
     super(props);
@@ -22,35 +24,31 @@ class LandingPage extends React.Component {
       curImageName: "profilepic2.JPG",
       displayImageCircle: true,
       card: aboutMeCard,
-      selected:"About Me"
+      selected:0
     }
   }
-  onClick(info){
-    switch(info.text){
-      case "Education":
-        this.setState({curImageName:info.image,title:educationTitle,text:educationText,card:educationCard,selected:info.text});
+  handleChange(event, value){
+    console.log(value);
+    switch(value){
+      case 1:
+        this.setState({title:educationTitle,text:educationText,card:educationCard,selected:value});
         break;
-      case "Experience":
-        this.setState({curImageName:info.image,title:experienceTitle,text:experienceText,card:experienceCard,selected:info.text});
+      case 3:
+        this.setState({title:contactMeTitle,text:contactMeText,card:contactMeCard,selected:value});
         break;
-      case "Contact Me!":
-        this.setState({curImageName:info.image,title:contactMeTitle,text:contactMeText,card:contactMeCard,selected:info.text});
-        break;
-      case "About Me":
-       this.setState({curImageName:info.image,title:aboutMeTitle,text:aboutMeText,card:aboutMeCard,selected:info.text});
+      case 0:
+       this.setState({title:aboutMeTitle,text:aboutMeText,card:aboutMeCard,selected:value});
        break;
-      case "Hobbies":
-        this.setState({curImageName:info.image,title:hobbiesTitle,text:hobbiesText,card:hobbiesCard,selected:info.text});
-        break;
-      case "Projects":
-        this.setState({curImageName:info.image,title:projectsTitle,text:projectsText,card:projectsCard,selected:info.text});
+      case 2:
+        this.setState({title:projectsTitle,text:projectsText,card:projectsCard,selected:value});
         break;
       default:
       break;
-
-
     }
   }
+  handleChangeOld = (event, value) => {
+   this.setState({ value });
+ };
   render() {
 
     return ( < Grid container spacing = {
@@ -61,16 +59,16 @@ class LandingPage extends React.Component {
       <Grid item lg={12}>
 
         <Tabs style={{backgroundColor:"#7ec0ee"}}
-          value={this.state.value}
-          onChange={this.handleChange}
+          value={this.state.selected}
+          onChange={this.handleChange.bind(this)}
           indicatorColor="primary"
           textColor="primary"
           centered
         >
-          <Tab style={{color:"white"}} label="About Me" />
-          <Tab style={{color:"white"}} label="Education" />
-          <Tab style={{color:"white"}} label="Projects" />
-          <Tab style={{color:"white"}} label="Resume" />
+          <Tab value = {0} style={{color:"white"}} label="About Me"/>
+          <Tab value = {1} style={{color:"white"}} label="Education"/>
+          <Tab value = {2} style={{color:"white"}} label="Projects"/>
+          <Link to={'./resume'}><Tab value = {3} style={{color:"white"}} label="Resume"/></Link>
         </Tabs>
 
       </Grid>
