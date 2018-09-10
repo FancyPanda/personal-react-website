@@ -37,7 +37,7 @@ const styles = {
     paddingBottom:10,
     color:"#57371e",
     textAlign:"center",
-    fontSize: 30,
+    fontSize: 40,
     },
     text:{
       fontSize:20,
@@ -47,7 +47,10 @@ const styles = {
     border: 0,
     height: "1px",
     background: "#57371e",
-
+  },
+  heading:{
+    fontSize:30,
+    color:"#57371e",
   }
 };
 function educationCard(props) {
@@ -58,28 +61,28 @@ function educationCard(props) {
     < div  className = {
       classes.card
     } >
-    < CardContent >
+    < CardContent>
     < Typography gutterBottom variant = "headline"
     component = "h2" className={classes.title} >{educationTitle}< /Typography> <hr className={classes.line}/>< Typography className={classes.text} >{educationText}
     < /Typography>
-    <ExpansionPanel>
+    <ExpansionPanel style={{backgroundColor:"#D2B48C"}}>
         <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
           <Typography className={classes.heading}>College: GMU</Typography>
         </ExpansionPanelSummary>
         <ExpansionPanelDetails>
-          <Typography>
+          <Typography className={classes.text}>
             I am currently attending George Mason University. I am a Junior studying for my bachelor of science in the Computer Science department. I have a
             cumulative GPA of 3.84 and am beginning to take more specialized senior level CS courses. I am scheduled to graduate in 2020 and plan on attending a graduate
             school for either CS or Cyber Security
           </Typography>
         </ExpansionPanelDetails>
       </ExpansionPanel>
-      <ExpansionPanel>
+      <ExpansionPanel style={{backgroundColor:"#D2B48C"}}>
         <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
           <Typography className={classes.heading}>High School: TJHSST</Typography>
         </ExpansionPanelSummary>
         <ExpansionPanelDetails>
-          <Typography>
+          <Typography className={classes.text}>
             I attended Thomas Jefferson High School for Science and Techology from 2012-2016. TJHSST at my time of attending was the number 1 high school in the United States.
             I graduated with a 3.89 GPA. During my time there I took as many tech classes as I could and discovered that I wanted to do programming for the rest of my life.
           </Typography>

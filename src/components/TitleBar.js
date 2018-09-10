@@ -7,7 +7,10 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import Icon from '@material-ui/core/Icon';
 import ArrowIcon from '@material-ui/icons/ArrowDropDown';
-
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowDown } from '@fortawesome/free-solid-svg-icons'
+import { Link, Element , Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
 const styles = {
   topBar: {
     width: "100%",
@@ -60,7 +63,7 @@ const styles = {
   },
   bottomCentered: {
     position: "absolute",
-    bottom: "8px",
+    bottom: "15px",
     left: "50%",
     transform: "translate(-50%,0)",
   },
@@ -68,10 +71,19 @@ const styles = {
   border: 0,
   height: "1px",
   background: "#fff",
-  
+},
+icon:{
+  fontSize:40,
+  color:"#fff",
 }
 }
 class TitleBar extends React.Component {
+    scrollDown(){
+      window.scrollTo(0,document.body.scrollHeight)
+    }
+    scrollToBottom() {
+    scroll.scrollToBottom();
+  }
     render() {
       const {
         classes
@@ -96,7 +108,11 @@ class TitleBar extends React.Component {
         className = {
           classes.title
         } >
-        Michael Vanderlyn < /Typography><hr className={classes.line}/> </div> < /div>);
+        Michael Vanderlyn < /Typography><hr className={classes.line}/> </div>
+        <div className={classes.bottomCentered} onClick={this.scrollToBottom}>
+        <FontAwesomeIcon icon={faArrowDown} className={classes.icon}/>
+        </div>
+< /div>);
       }
     }
     export default withStyles(styles)(TitleBar);

@@ -12,6 +12,7 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import {Link} from 'react-router-dom'
 import {projectsTitle,projectsText} from '../../../constants/text';
+import ProjectGalleryPage from '../../ProjectGalleryPage';
 const styles = {
   card: {
     width: "100%",
@@ -34,7 +35,7 @@ const styles = {
     paddingBottom:10,
     color:"#57371e",
     textAlign:"center",
-    fontSize: 30,
+    fontSize: 40,
     },
     text:{
       fontSize:20,
@@ -58,8 +59,9 @@ function projectsCard(props) {
     } >
     < CardContent >
     < Typography gutterBottom variant = "headline"
-    component = "h2" className={classes.title} >{projectsTitle}< /Typography> < Typography component = "p" >{projectsText}
-    < /Typography> < /CardContent ><CardActions><Link style={{margin:"auto"}}to="/projects"><Button variant="contained"color="secondary">Project Gallery</Button></Link></CardActions>
+    component = "h2" className={classes.title} >{projectsTitle}< /Typography><hr className={classes.line}/>
+    <ProjectGalleryPage/>
+    </CardContent>
     < /div>
       < /div >
   );

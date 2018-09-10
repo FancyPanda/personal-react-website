@@ -54,11 +54,11 @@ class LandingPage extends React.Component {
     return ( < Grid container spacing = {
         0
       } >
-      <Grid item lg={12}><TitleBar/></Grid>
-      <Grid item container style={{height:"100vh",backgroundColor:"#eae0c8"}} lg={12}>
-      <Grid item lg={12}>
+      <Grid item lg={12}md={12}sm={12}xs={12}><TitleBar/></Grid>
+      <Grid item container style={{minHeight:"100vh",maxHeight:"100%",backgroundColor:"#eae0c8"}} lg={12}>
+      <Grid item lg={12}md={12}sm={12}xs={12}>
 
-        <Tabs style={{backgroundColor:"#7ec0ee"}}
+        <Tabs id = "top"style={{backgroundColor:"#7ec0ee"}}
           value={this.state.selected}
           onChange={this.handleChange.bind(this)}
           indicatorColor="primary"
@@ -68,31 +68,21 @@ class LandingPage extends React.Component {
           <Tab value = {0} style={{color:"white"}} label="About Me"/>
           <Tab value = {1} style={{color:"white"}} label="Education"/>
           <Tab value = {2} style={{color:"white"}} label="Projects"/>
-          <Link to={'./resume'}><Tab value = {3} style={{color:"white"}} label="Resume"/></Link>
+          <Link style={{color:"white"}}to={'./resume'}><Tab value = {3} style={{color:"white"}} label="Resume"/></Link>
         </Tabs>
 
       </Grid>
-      <Grid item lg={1}/>
-      < Grid item lg={2}>
-      < /Grid>
-      <Grid item xs={6}sm={6}md={6}>
+      <Grid item lg={0}md={0}sm={0}xs={0}/>
+      < Grid item lg={2}md={2}sm={0}xs={0}/>
+      <Grid item lg={8}md={8}sm={12}xs={12}>
       <Grid container>
 
-      < Grid item xs = {
-    12
-  }
-  sm = {
-    12
-  }
-  md = {
-      12
-    } lg={12}xl={12} style={{margin:"auto 0"}}>
+      < Grid item lg={12}md={12}sm={12}xs={12} style={{margin:"auto 0"}}>
     {<this.state.card/>}< /Grid>
     </Grid>
     </Grid>
-    < Grid item lg={2}>
-      < /Grid>
-    <Grid item lg={1}/>
+    <Grid item lg={2}md={2}sm={0}xs={0}/>
+    < Grid item lg={0}md={0}sm={0}xs={0}/>
     < /Grid >
     </Grid>
    );

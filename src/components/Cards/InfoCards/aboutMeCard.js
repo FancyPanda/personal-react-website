@@ -19,6 +19,12 @@ import Divider from '@material-ui/core/Divider';
 import EmailIcon from '@material-ui/icons/Email';
 import DraftsIcon from '@material-ui/icons/Drafts';
 import {contactMeTitle,contactMeText} from '../../../constants/text';
+import Grid from '@material-ui/core/Grid';
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faEnvelopeOpen } from '@fortawesome/free-solid-svg-icons'
+import { faLinkedin } from '@fortawesome/free-brands-svg-icons'
+import { faGithubSquare } from '@fortawesome/free-brands-svg-icons'
 const styles = {
   card: {
     width: "100%",
@@ -41,7 +47,7 @@ const styles = {
     paddingBottom:10,
     color:"#57371e",
     textAlign:"center",
-    fontSize: 30,
+    fontSize: 40,
     },
     text:{
       fontSize:20,
@@ -52,6 +58,10 @@ const styles = {
     height: "1px",
     background: "#57371e",
 
+  },
+  icon:{
+    fontSize:30,
+    color:"#7ec0ee",
   }
 };
 
@@ -60,38 +70,34 @@ function aboutMeCard(props) {
     classes
   } = props;
   return ( < div >
-    < div raised={false}  className = {
+    < div className = {
       classes.card
     } >
     < CardContent >
     < Typography gutterBottom variant = "headline"
     component = "h2" className={classes.title} >{aboutMeTitle}< /Typography> <hr className={classes.line}/>< Typography className={classes.text} >{aboutMeText}
-    < /Typography> <hr className={classes.line}/><List style={{width:"100%"}}component="nav">
+    < /Typography> <hr className={classes.line}/><Grid container style={{width:"100%"}}>
+<Grid lg={3}md={3}sm={3}xs={3}/>
+    <Grid item lg={2}md={2}sm={2}xs={2} style={{textAlign:"center"}}>
       <a href="mailto:michael@vanderlyn.info">
-        <ListItem button>
-          <ListItemIcon>
-            <EmailIcon />
-          </ListItemIcon>
-          <ListItemText className={classes.avatar}primary="michael@vanderlyn.info" />
-        </ListItem>
+
+          <FontAwesomeIcon icon={faEnvelopeOpen} className={classes.icon}/>
+
         </a>
+        </Grid>
+        <Grid item lg={2}md={2}sm={2}xs={2} style={{textAlign:"center"}}>
         <a href="https://www.linkedin.com/in/michael-vanderlyn/">
-        <ListItem button>
-          <ListItemIcon>
-            <img className={classes.avatar} src = {require('../../../media/In-2C-34px-R.png')}/>
-          </ListItemIcon>
-          <ListItemText primary="LinkedIn" />
-        </ListItem>
+
+            <FontAwesomeIcon icon={faLinkedin} className={classes.icon}/>
         </a>
+        </Grid>
+        <Grid item lg={2}md={2}sm={2}xs={2} style={{textAlign:"center"}}>
         <a href="https://github.com/FancyPanda">
-        <ListItem button>
-          <ListItemIcon>
-          <img className={classes.avatar} src = {require('../../../media/GitHub-Mark-32px.png')}/>
-      </ListItemIcon>
-          <ListItemText primary="GitHub" />
-        </ListItem>
+          <FontAwesomeIcon icon={faGithubSquare} className={classes.icon}/>
         </a>
-      </List>< /CardContent >
+        </Grid>
+        <Grid lg={3}/>
+      </Grid>< /CardContent >
     < /div>
       < /div >
   );

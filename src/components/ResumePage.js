@@ -19,8 +19,8 @@ import {Link} from 'react-router-dom'
 const styles = {
   card: {
     width: "100%",
-    height: "100%",
-    borderRadius: 10,
+    height: "100vh",
+    backgroundColor:"#AE8D70",
     margin:"auto",
   //  marginLeft: 15,
   },
@@ -33,38 +33,33 @@ const styles = {
   },
   title:{
     width:"100%",
-    backgroundColor:"#006494",
-    borderRadius:10,
     paddingTop:10,
     paddingBottom:10,
-    color:"white",
+    color:"#D2B48C",
     textAlign:"center",
     },
     button:{padding:10,
             },
+    background:{
+      backgroundColor:"#eae0c8",
+      minHeight:"100vh",
+      maxHeight:"100%",
+    },
+    pdf:{
+      width:"100%",
+      height:"100%"
+    }
 };
 
 function ResumePage(props) {
   const {
     classes
   } = props;
-  return ( <Grid container><Grid item md={1}sm={1}/><Grid item md={10}sm={10}xs={12}>< div >
-    < Card raised={true}  className = {
+  return ( <Grid container className={classes.background}><Grid item md={1}sm={1}/><Grid item md={10}sm={10}xs={12}>< div >
+    < Card className = {
       classes.card
     } >
-    < CardContent >
-    < Typography gutterBottom variant = "headline"
-    component = "h2" className={classes.title} >{educationTitle}< /Typography> < Typography component = "p" >{educationText}
-    < /Typography>
-      <Document file={require('../media/resume.pdf')}>
-      <Page scale={1}style={{width:"100%",margin:"auto",textAlign:"center"}}pageNumber = {1}/>
-      </Document>
-     < /CardContent >
-     <CardActions >
-     <Link style ={{margin:"auto"}}to="/">
-     <Button variant="contained" color="secondary" className={classes.button}>Back</Button>
-     </Link>
-     </CardActions>
+      <embed className={classes.pdf} src={require('../media/resume.pdf')}/>
     < /Card>
       < /div ></Grid><Grid item md={1}sm={1}/></Grid>
   );
