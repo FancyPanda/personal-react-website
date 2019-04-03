@@ -1,6 +1,3 @@
-# codemix-vanilla-react
-Template for project creation of React inside CodeMix
+# Michael Vanderlyn's React Website
+Repo for a personal website written in react
 
-## Contents
-
-The template project is just an example Hello World that guide you through the use of React with the Expressjs framework to build a very simple web application that display the Hello World!!! Greeting
