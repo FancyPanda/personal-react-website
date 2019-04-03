@@ -63,21 +63,22 @@ function educationCard(props) {
     } >
     < CardContent>
     < Typography gutterBottom variant = "headline"
-    component = "h2" className={classes.title} >{educationTitle}< /Typography> <hr className={classes.line}/>< Typography className={classes.text} >{educationText}
-    < /Typography>
-    <ExpansionPanel style={{backgroundColor:"#D2B48C"}}>
+    component = "h2" className={classes.title} >{educationTitle}</Typography> <hr className={classes.line}/>< Typography className={classes.text} >{educationText}
+    </Typography>
+    <ExpansionPanel defaultExpanded={true} style={{backgroundColor:"#D2B48C"}}>
         <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
           <Typography className={classes.heading}>College: GMU</Typography>
         </ExpansionPanelSummary>
         <ExpansionPanelDetails>
           <Typography className={classes.text}>
-            I am currently attending George Mason University. I am a Junior studying for my bachelor of science in the Computer Science department. I have a
-            cumulative GPA of 3.84 and am beginning to take more specialized senior level CS courses. I am scheduled to graduate in 2020 and plan on attending a graduate
-            school for either CS or Cyber Security
+            I am currently attending George Mason University. I am a Junior studying for my bachelor of science in the Computer Science department.
+            I am taking more specialized senior level CS courses now, and am really interested in learning more about machine learning and computer
+            vision! I am scheduled to graduate in 2020 and plan on working for a company while I work towards getting a master in Computer Science
+            or Cyber Security.
           </Typography>
         </ExpansionPanelDetails>
       </ExpansionPanel>
-      <ExpansionPanel style={{backgroundColor:"#D2B48C"}}>
+      <ExpansionPanel defaultExpanded={true} style={{backgroundColor:"#D2B48C"}}>
         <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
           <Typography className={classes.heading}>High School: TJHSST</Typography>
         </ExpansionPanelSummary>
@@ -88,9 +89,9 @@ function educationCard(props) {
           </Typography>
         </ExpansionPanelDetails>
       </ExpansionPanel>
-     < /CardContent >
-    < /div>
-      < /div >
+     </CardContent >
+    </div>
+      </div>
   );
 }
 educationCard.propTypes = {
