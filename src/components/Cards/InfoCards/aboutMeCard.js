@@ -79,7 +79,7 @@ function aboutMeCard(props) {
     < /Typography> <hr className={classes.line}/><Grid container style={{width:"100%"}}>
 <Grid lg={3}md={3}sm={3}xs={3}/>
     <Grid item lg={2}md={2}sm={2}xs={2} style={{textAlign:"center"}}>
-      <a href="mailto:michael@vanderlyn.info">
+      <a href="mailto:mvanderl@gmu.edu">
 
           <FontAwesomeIcon icon={faEnvelopeOpen} className={classes.icon}/>
 
